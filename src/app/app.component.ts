@@ -16,5 +16,6 @@ export class AppComponent {
   update = 'update when init';
   updateAttribute() {
     this.update = 'update when click';
+    throw new Error('Im an error');// 主动抛出Error
   }
 }
