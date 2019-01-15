@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { CustomClientError } from './error-handle';
+import { CustomServerError } from './error-handle/error/custom-server-error';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +17,29 @@ export class AppComponent {
   }
 
   update = 'update when init';
-  updateAttribute() {
-    this.update = 'update when click';
-    throw new Error('Im an error');// 主动抛出Error
+  errorEmitter() {
+    throw new Error('Im an native error');// 主动抛出Error
   }
+
+  customErrorEmitter() {
+    throw new CustomClientError('Im a custom error');
+  }
+
+  httpErrorEmitter() {
+  const init = {
+      error : 'Im a navtive http error'
+  }
+    throw new HttpErrorResponse(init);
+  }
+
+  customHttpErrorEmitter() {
+    const init = {
+        error : 'Im a custom http error'
+    }
+    const httpErrorResponse = new HttpErrorResponse(init);
+    throw new CustomServerError(httpErrorResponse);
+  }
+
+  
+
 }

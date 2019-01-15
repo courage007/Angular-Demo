@@ -8,8 +8,13 @@
 <p>Data shown in app: {{localText}} </p>
 
 <parent></parent>
-
 <child></child>
 
 <attribute-demo [update] = "update"> </attribute-demo>
-<button (click)="updateAttribute()">Update attribute</button>
+
+<div class = "error-handle-mechanism">
+    <button (click)="errorEmitter()">throw navtive error</button>
+    <button (click)="customErrorEmitter()">throw custom error</button>
+    <button (click)="httpErrorEmitter()">throw native http error</button>
+    <button (click)="customHttpErrorEmitter()">throw custom http error</button>
+</div>
