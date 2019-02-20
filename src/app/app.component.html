@@ -1,20 +1,27 @@
 <h1>Angular Demo汇总</h1>
-
+<h3>自定义输入控件</h3>
 <custom-input-component [(ngModel)] = "localText">
 </custom-input-component>
-
 <button (click)="changeLocalText()">Change local Text in the app component</button>
 
 <p>Data shown in app: {{localText}} </p>
 
+<h3>子节点集成</h3>
 <parent></parent>
 <child></child>
 
+<h3>input装饰器使用</h3>
 <attribute-demo [update] = "update"> </attribute-demo>
 
+<h3>异常处理机制验证</h3>
 <div class = "error-handle-mechanism">
     <button (click)="errorEmitter()">throw navtive error</button>
     <button (click)="customErrorEmitter()">throw custom error</button>
     <button (click)="httpErrorEmitter()">throw native http error</button>
     <button (click)="customHttpErrorEmitter()">throw custom http error</button>
+</div>
+
+<h3>自定义装饰器</h3>
+<div class="decorator-demo">
+    <custom-decorator-demo></custom-decorator-demo>
 </div>

@@ -11,9 +11,11 @@ import { ExtendService } from './extend-component-demo/extend.service';
 import { AttributeUpdateComponent } from './attribute-update-demo/attribute-update.component';
 import { CustomErrorHandler, NotificationService } from './error-handle';
 import { LogService } from './error-handle/error-service/log-service';
+import { DecoratorDemoComponent } from './decorator-demo/decorator-demo.component';
 
 @NgModule({
   declarations: [
+    DecoratorDemoComponent,
     AppComponent,
     CustomInputComponentComponent,
     BaseComponent,
