@@ -1,6 +1,6 @@
 <h1>Angular Demo汇总</h1>
 <h3>自定义输入控件</h3>
-<custom-input-component [(ngModel)] = "localText">
+<custom-input-component [(ngModel)]="localText">
 </custom-input-component>
 <button (click)="changeLocalText()">Change local Text in the app component</button>
 
@@ -11,17 +11,32 @@
 <child></child>
 
 <h3>input装饰器使用</h3>
-<attribute-demo [update] = "update"> </attribute-demo>
+<attribute-demo [update]="update"> </attribute-demo>
 
 <h3>异常处理机制验证</h3>
-<div class = "error-handle-mechanism">
-    <button (click)="errorEmitter()">throw navtive error</button>
-    <button (click)="customErrorEmitter()">throw custom error</button>
-    <button (click)="httpErrorEmitter()">throw native http error</button>
-    <button (click)="customHttpErrorEmitter()">throw custom http error</button>
+<div class="error-handle-mechanism">
+  <button (click)="errorEmitter()">throw navtive error</button>
+  <button (click)="customErrorEmitter()">throw custom error</button>
+  <button (click)="httpErrorEmitter()">throw native http error</button>
+  <button (click)="customHttpErrorEmitter()">throw custom http error</button>
 </div>
 
 <h3>自定义装饰器</h3>
 <div class="decorator-demo">
-    <custom-decorator-demo></custom-decorator-demo>
+  <custom-decorator-demo></custom-decorator-demo>
+</div>
+
+<!-- 后续Demo基于Module调用 -->
+<h3 class="title">Angular Router Demo</h3>
+<!-- <nav>
+  <a routerLink="./attributes" class="nav-link">Attribute Component</a>
+  <a routerLink="./heroes" class="nav-link">Hero Demo</a>
+</nav>
+<router-outlet name="popup"></router-outlet> -->
+
+<div class="custom-navigator">
+  <app-navbar></app-navbar>
+</div>
+<div class="custom-router">
+  <router-outlet></router-outlet>
 </div>

@@ -16,9 +16,10 @@ export class AppComponent {
     this.localText = 'success';
   }
 
+  // tslint:disable-next-line: member-ordering
   update = 'update when init';
   errorEmitter() {
-    throw new Error('Im an native error');// 主动抛出Error
+    throw new Error('Im an native error'); // 主动抛出Error
   }
 
   customErrorEmitter() {
@@ -26,20 +27,18 @@ export class AppComponent {
   }
 
   httpErrorEmitter() {
-  const init = {
-      error : 'Im a navtive http error'
-  }
+    const init = {
+      error: 'Im a navtive http error'
+    };
     throw new HttpErrorResponse(init);
   }
 
   customHttpErrorEmitter() {
     const init = {
-        error : 'Im a custom http error'
-    }
+      error: 'Im a custom http error'
+    };
     const httpErrorResponse = new HttpErrorResponse(init);
     throw new CustomServerError(httpErrorResponse);
   }
-
-  
 
 }
